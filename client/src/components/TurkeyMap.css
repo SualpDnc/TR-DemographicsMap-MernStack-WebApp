@@ -1,0 +1,8 @@
+svg path {
+    transition: fill 0.2s;
+  }
+  
+  svg path:hover {
+    fill: #2563eb; /* Tailwind blue-600 */
+  }
+  

@@ -1,20 +1,21 @@
 const express = require("express");
+const cors = require("cors"); // CORS modülünü içe aktar
 const app = express();
 const connectDB = require("./db");
 const cityRoutes = require("./routes/city");
 require("dotenv").config();
 
-// MongoDB bağlantısını başlat
 connectDB();
 
-// JSON parsing middleware
-app.use(express.json());
+// 👇 CORS'u global olarak aktif et (frontend'e izin verir)
+app.use(cors({
+  origin: "http://localhost:3000" // React uygulamasına izin ver
+}));
 
-// API route'ları
+app.use(express.json());
 app.use("/api/city", cityRoutes);
 
-// Sunucuyu başlat
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`🚀 Sunucu çalışıyor: http://localhost:${PORT}`);
 });
