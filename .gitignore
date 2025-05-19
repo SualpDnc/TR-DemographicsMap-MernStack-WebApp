@@ -1,0 +1,11 @@
+# Node.js klasörleri
+node_modules
+.env
+
+# OS ve IDE dosyaları
+.DS_Store
+.vscode
+
+# Build klasörleri
+/dist
+/build
