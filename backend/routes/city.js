@@ -1,23 +1,21 @@
 const express = require("express");
 const router = express.Router();
-const City = require("../models/City");
+const City = require("../models/City"); // MongoDB City modelini içe aktar
 
-// GET /api/city/:plate → Verilen plakaya göre şehir bilgisini getir
+// Route: Belirli bir ili plakaya göre getir
+// Örn: GET /api/city/6
 router.get("/:plate", async (req, res) => {
   try {
-    const plate = parseInt(req.params.plate); // string → int dönüşümü
-
-    const city = await City.findOne({ plate });
-
+    const city = await City.findOne({ plate: parseInt(req.params.plate) });
     if (!city) {
-      return res.status(404).json({ message: "Şehir bulunamadı" });
+      return res.status(404).json({ message: "İl bulunamadı" });
     }
-
-    res.json(city);
+    res.json(city); // Tüm detaylı şehir verisini döner
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Sunucu hatası" });
+    res.status(500).json({ message: "Sunucu hatası", error: err });
   }
 });
+
+
 
 module.exports = router;
