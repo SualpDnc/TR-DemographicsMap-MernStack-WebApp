@@ -1,7 +1,8 @@
 # 🇹🇷 Türkiye Nüfus Haritası – MERN Stack Web Uygulaması
 📌 Türkiye haritası üzerinde il seçerek, il ve ilçe bazlı nüfus bilgilerini görmenizi sağlayan interaktif ve modern web uygulaması.  
 Projede **React**, **Node.js**, **Express.js**, **MongoDB** ve **TailwindCSS** teknolojileri kullanılmaktadır.
-<img width="1440" alt="Image" src="https://github.com/user-attachments/assets/8f37d37e-88ad-4e18-ad0e-76c99ed87c89" />
+<img width="1078" alt="Image" src="https://github.com/user-attachments/assets/6fbfa16e-42b9-4014-869d-b35e8f6e53f1" />
+
 
 
 ## 🚀 Özellikler
